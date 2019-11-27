@@ -18,7 +18,11 @@ def apps = [
         'Uncaught': 'io.turntabl.threads.Uncaught',
 
         'Account': 'io.turntabl.dataaccess.Account',
-        'Volatile': 'io.turntabl.dataaccess.Volatile'
+        'Volatile': 'io.turntabl.dataaccess.Volatile',
+        'AtomicAccount': 'io.turntabl.dataaccess.AtomicAccount',
+
+        'BlockingQueue': 'io.turntabl.execution.producerconsumer.Driver',
+        'BarrierRace': 'io.turntabl.execution.barriers.BarrierRace',
         ]
 
 apps.each() { appName, className ->

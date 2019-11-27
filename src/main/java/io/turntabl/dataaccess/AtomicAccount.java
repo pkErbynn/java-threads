@@ -1,26 +1,26 @@
 package io.turntabl.dataaccess;
 
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
-public class Account {
-  private Object lock = new Object();
-  private int balance;
+public class AtomicAccount {
+  private AtomicInteger balance = new AtomicInteger();
   
-  public Account(int startBalance){
-      this.balance = startBalance;
+  public AtomicAccount(int startBalance){
+    this.balance.set(startBalance);
   }
   
   public void Deposit(int amount){
-    balance += amount;
+    balance.addAndGet(amount);
   }
   
   public void Withdraw(int amount){
-    balance -= amount;
+    balance.addAndGet(-amount);
   }
   
   public static void main(String[] args) throws Exception{
-    
-    Account a = new Account(0);
+  
+    AtomicAccount a = new AtomicAccount(0);
     
     Thread t1 = new Thread(()->{
       IntStream.range(0, 1000000).forEach(i ->
@@ -41,7 +41,7 @@ public class Account {
     
     t1.join();
     t2.join();
-  
+    
     System.out.println(a.balance);
   }
 }

@@ -3,19 +3,23 @@ package io.turntabl.dataaccess;
 import java.util.stream.IntStream;
 
 public class Account {
-  
+  private Object lock = new Object();
   private int balance;
   
   public Account(int startBalance){
-    this.balance = startBalance;
+      this.balance = startBalance;
   }
   
-  public  void Deposit(int amount){
-    balance += amount;
+  public void Deposit(int amount){
+    synchronized (lock) {
+      balance += amount;
+    }
   }
   
-  public  void Withdraw(int amount){
-    balance -= amount;
+  public void Withdraw(int amount){
+    synchronized (lock) {
+      balance -= amount;
+    }
   }
   
   public static void main(String[] args) throws Exception{

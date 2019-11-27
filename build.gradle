@@ -17,7 +17,8 @@ def apps = [
         'Interrupt':'io.turntabl.threads.Interrupt',
         'Uncaught': 'io.turntabl.threads.Uncaught',
 
-        'Account': 'io.turntabl.dataaccess.Account'
+        'Account': 'io.turntabl.dataaccess.Account',
+        'Volatile': 'io.turntabl.dataaccess.Volatile'
         ]
 
 apps.each() { appName, className ->

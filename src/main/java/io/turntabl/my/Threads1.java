@@ -2,6 +2,7 @@ package io.turntabl.my;
 
 public class Threads1 {
     public static void main(String[] args) throws InterruptedException {
+
         Thread t1 = new Thread(() -> {
             System.out.println("thread 1");
             try {
@@ -12,8 +13,6 @@ public class Threads1 {
         });
 
         Thread t2 = new Thread(() -> {
-//            for(int i = 0; i<=10000; i++){
-//            }
             System.out.println("thread 2");
             try {
                 Thread.sleep(10000);

@@ -17,6 +17,7 @@ def apps = [
         'Threads': 'io.turntabl.threads.Threads',
         'Interrupt':'io.turntabl.threads.Interrupt',
         'Foreground': 'io.turntabl.threads.Foreground',
+        'PingPong': 'io.turntabl.threads.PingPong',
         'Uncaught': 'io.turntabl.threads.Uncaught',
 
         'Account': 'io.turntabl.dataaccess.Account',

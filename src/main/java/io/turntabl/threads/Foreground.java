@@ -6,7 +6,7 @@ public class Foreground {
   public static void main(String[] args) throws InterruptedException {
     Thread t = new Thread(() -> {
       IntStream.range(0, 10000).forEach(i -> System.out.print("."));
-      System.out.println("Second thread dying");
+      System.out.println("Second thread dying...");
       
     });
     

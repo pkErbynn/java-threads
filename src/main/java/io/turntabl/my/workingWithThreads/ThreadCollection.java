@@ -8,39 +8,31 @@ import java.util.stream.IntStream;
 public class ThreadCollection {
     public static void main(String[] args) throws InterruptedException {
 
-        List<Thread> _10Threads = IntStream.range(1, 11).mapToObj(
-                e -> new Thread(() -> {
-                    while (!Thread.interrupted()) System.out.println("Oh noo...thread " + e + " Interrupted");
-                })
-        ).collect(Collectors.toList());
+        List<Thread> _10Threads = IntStream.range(1, 11)
+                .mapToObj(e -> new Thread(() -> {
+                    while (!Thread.interrupted()){}
+                    System.out.println("Oh noo...thread " + e + " Interrupted");
+                })).collect(Collectors.toList());
 
         _10Threads.forEach(e -> e.start());
 
         System.out.println("Active threads running: " + Thread.activeCount());
 
-//        Random random = new Random();
-//        while (Thread.activeCount() != 1) {
-
-
-//        _10Threads.stream().forEach(thread -> {
-//            try {
-//                thread.sleep(100);
-//            } catch (InterruptedException e) {
-//                e.printStackTrace();
-//            }
-//        });
-
-        _10Threads.forEach(thread -> thread.interrupt());
-
-
         _10Threads.stream().forEach(thread -> {
             try {
-                thread.join();
+                thread.sleep(100);
+                thread.interrupt();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         });
 
+//        Random rand = new Random();
+//        while (Thread.activeCount() != 1){
+//            Thread.sleep(1000);
+//
+//            _10Threads.get(rand.nextInt(10)).interrupt();
+//        }
 
     }
 

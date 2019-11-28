@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.IntStream;
 
 public class AtomicAccount {
-  private AtomicInteger balance = new AtomicInteger();
+  private AtomicInteger balance = new AtomicInteger(); // meaning...only one thread can access at a time
   
   public AtomicAccount(int startBalance){
     this.balance.set(startBalance);

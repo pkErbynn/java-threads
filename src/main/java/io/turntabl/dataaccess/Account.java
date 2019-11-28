@@ -10,11 +10,11 @@ public class Account {
       this.balance = startBalance;
   }
   
-  public void Deposit(int amount){
+  public synchronized void Deposit(int amount){
     balance += amount;
   }
   
-  public void Withdraw(int amount){
+  public synchronized void Withdraw(int amount){
     balance -= amount;
   }
   

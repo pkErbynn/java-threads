@@ -13,8 +13,10 @@ repositories {
 }
 
 def apps = [
+        'Stack': 'io.turntabl.threads.Stack',
         'Threads': 'io.turntabl.threads.Threads',
         'Interrupt':'io.turntabl.threads.Interrupt',
+        'Foreground': 'io.turntabl.threads.Foreground',
         'Uncaught': 'io.turntabl.threads.Uncaught',
 
         'Account': 'io.turntabl.dataaccess.Account',

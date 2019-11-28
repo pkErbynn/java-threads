@@ -9,13 +9,15 @@ public class BackgroundThread {
 //            System.out.println("thread 1");
             IntStream.range(0, 10).forEach(e -> System.out.println("thread 1: "+ e));
             try {Thread.sleep(10000);} catch (InterruptedException e) {e.printStackTrace();}
+
         });
+        t1.setName("ThreadName: 1");
 
         Thread t2 = new Thread(() -> {
 //            System.out.println("thread 2");
             IntStream.range(0, 10).forEach(e -> System.out.println("thread 2: "+ e));
             try {Thread.sleep(100);} catch (InterruptedException e) {e.printStackTrace();}
-        });
+        }, "ThreadName: 2");
 
         t1.start();
         Thread.sleep(10);     // 1sec diff after t1
@@ -29,6 +31,8 @@ public class BackgroundThread {
         System.out.println("t1 alive?: " + t1.isAlive());
 
         System.out.println("main thread");
+        System.out.println(t1.getName());
+        System.out.println(t2.getName());
 
     }
 }

@@ -1,4 +1,4 @@
-package io.turntabl.my;
+package io.turntabl.my.workingWithThreads;
 
 public class Threads1 {
     public static void main(String[] args) throws InterruptedException {

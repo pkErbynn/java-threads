@@ -1,4 +1,4 @@
-package io.turntabl.my;
+package io.turntabl.my.workingWithThreads;
 
 import java.util.List;
 import java.util.Random;

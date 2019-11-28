@@ -23,6 +23,7 @@ public class AtomicAccount {
     AtomicAccount a = new AtomicAccount(0);
     
     Thread t1 = new Thread(()->{
+      System.out.println("t1");
       IntStream.range(0, 1000000).forEach(i ->
         a.Deposit(1000));
       IntStream.range(0,1000000).forEach(i ->
@@ -30,6 +31,7 @@ public class AtomicAccount {
     });
     
     Thread t2 = new Thread(()->{
+      System.out.println("t2");
       IntStream.range(0, 1000000).forEach(i ->
         a.Deposit(1000));
       IntStream.range(0,1000000).forEach(i ->

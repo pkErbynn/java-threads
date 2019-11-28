@@ -3,7 +3,7 @@ package io.turntabl.dataaccess;
 import io.turntabl.threads.Interrupt;
 
 public class Volatile {
-  private boolean setupComplete = false;
+  private /*volatile*/ boolean setupComplete = false;
   private String config = "";
   
   public static void main(String[] args) throws Exception{

@@ -6,7 +6,7 @@ public class PingPong {
   public static void main(String[] args) throws InterruptedException {
     Thread t1 = new Thread(() -> {
       try{
-        Thread.sleep(100);
+        Thread.sleep(150);
         System.out.println("ping");
       }catch(InterruptedException ie){}
     });

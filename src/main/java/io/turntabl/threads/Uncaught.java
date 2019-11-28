@@ -9,6 +9,6 @@ public class Uncaught {
         e.getMessage());
     });
     
-    throw new InterruptedException();
+//    throw new InterruptedException();
   }
 }

@@ -1,7 +1,7 @@
 package io.turntabl.my.workingWithThreads;
 
 public class SharedData {
-    private volatile boolean isSetupDone = false;
+    private volatile boolean isSetupDone = false;       // volatile => threads share data from diff their resp world
     private String setUp = "";
 
     public static void main(String[] args) {

@@ -5,7 +5,7 @@ public class Uncaught {
   
     Thread.setDefaultUncaughtExceptionHandler((t, e) ->
     {
-      System.err.println("uncaught exception: " +
+      System.err.println("uncaught exception...: " + t.getName() + "." +
         e.getMessage());
     });
     

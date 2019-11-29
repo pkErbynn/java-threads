@@ -18,9 +18,9 @@ public class ThreadCollection {
 
         System.out.println("Active threads running: " + Thread.activeCount());
 
-        _10Threads.stream().forEach(thread -> {
+        _10Threads.forEach(thread -> {
             try {
-                thread.sleep(100);
+                thread.sleep(1000);
                 thread.interrupt();
             } catch (InterruptedException e) {
                 e.printStackTrace();
